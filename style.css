@@ -1,0 +1,15 @@
+h1{
+    margin-left: 36rem;
+    margin-top: 14rem;
+    color: rgb(84, 84, 118);
+}
+#click{
+    margin-left: 33rem;
+    color: rgb(101, 101, 238);
+    padding: 1rem;
+    font-size: x-large;
+    border-radius: 2rem;
+    width: 18rem;
+    background-color: gold;
+    cursor: pointer;
+}
