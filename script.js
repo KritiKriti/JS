@@ -1,19 +1,19 @@
-function Text()
-{
-    const fet =async =>
-        {
-      const response=  fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then(response => response.json())
-      .then(json => console.log(json))
+const fetchTodo = async () => {
+  const dataList = document.getElementById("unlist");
 
-      console.log("Response",response);
-      return response;
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const responseData = await response.json();
+
+    if (responseData) {
+      const li = document.createElement("li");
+      li.className = "li"; 
+      li.innerHTML = `<span>${responseData.title}</span>`;
+      dataList.appendChild(li);
     }
-    
-    const button=document.getElementById("click");
-    button.innerHTML =  fet();
-   
-    const data = fet();
-    console.log(data);
-    document.getElementById(data);
-}
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+document.getElementById("click").addEventListener("click", fetchTodo);
